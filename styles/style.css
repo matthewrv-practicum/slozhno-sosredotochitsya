@@ -178,12 +178,22 @@
   );
 }
 
+@media (min-width: 768px) {
+  .content__section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+  }
+}
+
 .content__section-reasons {
+  grid-template-columns: 1fr 2fr;
 }
 
 .content__section-title {
   font-size: 1.125rem;
   color: var(--accent-color);
+  margin-block-start: 20px;
 }
 
 .content__subsection-title {
@@ -205,14 +215,55 @@
   font-weight: 400;
 }
 
+.content__section-distractions .content__section-title {
+  grid-column: 1 / 2;
+}
+
+.content__section-distractions .content__grid-item {
+  grid-column: 1 / -1;
+}
+
+.content__section-howto {
+  grid-template-columns: 1fr 2fr;
+}
+
 .content__section-images {
   font-size: 0;
+  gap: 20px;
+}
+
+.content__section-images .content__subsection-title {
+  grid-column: 1 / -1;
 }
 
 .content__image {
   width: 100%;
-  object-fit: contain;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
   margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .content__image {
+    margin-top: 0;
+  }
+}
+
+.content__image-sunset {
+  grid-column: span 2;
+}
+
+.content__image-icecream {
+  grid-row: span 2;
+}
+
+.content__image-tape {
+  grid-row: span 2;
+}
+
+.content__image-street {
+  grid-column: span 2;
 }
 
 .footer {
@@ -220,7 +271,11 @@
 
   position: relative;
   margin: var(--padding);
-  margin-block-start: calc(var(--padding) + 40px);
+  margin-block-start: clamp(
+    50px,
+    50px + 30 * (100vi - var(--breakpoint-s)) / var(--s-m-diff),
+    80px
+  );
   block-size: calc(100vb - 2 * var(--padding));
 }
 
