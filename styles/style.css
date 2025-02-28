@@ -152,7 +152,7 @@
   margin-block: auto;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .header__subtitle {
     justify-self: end;
     width: 50%;
@@ -190,6 +190,16 @@
   grid-template-columns: 1fr 2fr;
 }
 
+@media (min-width: 1024px) {
+  .content__section-reasons {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .content__section-reasons .content__grid-item {
+    grid-column: 2 / -1;
+  }
+}
+
 .content__section-title {
   font-size: 1.125rem;
   color: var(--accent-color);
@@ -223,8 +233,25 @@
   grid-column: 1 / -1;
 }
 
+@media (min-width: 1024px) {
+  .content__section-distractions .content__grid-item {
+    grid-column: span 1;
+    grid-row: 2;
+  }
+}
+
 .content__section-howto {
   grid-template-columns: 1fr 2fr;
+}
+
+@media (min-width: 1024px) {
+  .content__section-howto {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .content__section-howto .content__section-grid-item {
+    grid-column: 2 / -1;
+  }
 }
 
 .content__section-images {
@@ -246,6 +273,8 @@
 
 @media (min-width: 768px) {
   .content__image {
+    /* FIXME margin 10px резко заменяется на gap в 20px */
+    /* заметно при изменении размеров окна */
     margin-top: 0;
   }
 }
