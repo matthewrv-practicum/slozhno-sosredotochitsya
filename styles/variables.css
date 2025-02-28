@@ -4,11 +4,17 @@
 */
 
 :root {
-  --primary-color: #f1b2ce;
-  --accent-color: #ff0070;
-  --bg-color: #000028;
-  --heading-color: #000028;
-  --banner-accent: #db00ff;
+  --text-color: #f1b2ce;
+
+  --banner-main-color: #db00ff;
+  --banner-shadow-color: #ff0070;
+
+  --section-title-color: #ff0070;
+  --subsection-title-background: #ff0070;
+  --subsection-title-color: #000028;
+
+  --decoration-color: #ff0070;
+
   --breakpoint-s: 375px;
   --breakpoint-m: 768px;
   --breakpoint-l: 1024px;

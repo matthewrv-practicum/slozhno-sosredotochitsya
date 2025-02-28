@@ -11,7 +11,7 @@
   font-family: "IBM Plex Mono", Arial, Helvetica, sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
-  color: var(--primary-color);
+  color: var(--text-color);
   line-height: 1.3;
 
   --padding: clamp(
@@ -46,8 +46,8 @@
   block-size: 25px;
   inline-size: 25px;
 
-  border-block-end: var(--accent-color) solid 1px;
-  border-inline-start: var(--accent-color) solid 1px;
+  border-block-end: var(--decoration-color) solid 1px;
+  border-inline-start: var(--decoration-color) solid 1px;
 }
 
 .decorated-zone::after {
@@ -61,12 +61,12 @@
   block-size: 25px;
   inline-size: 25px;
 
-  border-inline-end: var(--accent-color) solid 1px;
-  border-block-start: var(--accent-color) solid 1px;
+  border-inline-end: var(--decoration-color) solid 1px;
+  border-block-start: var(--decoration-color) solid 1px;
 }
 
 .header__recorder {
-  color: var(--accent-color);
+  color: var(--decoration-color);
   position: absolute;
 
   right: 28px;
@@ -78,8 +78,8 @@
   block-size: 9px;
   inline-size: 9px;
   border-radius: 50%;
-  background-color: var(--accent-color);
-  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--decoration-color);
+  box-shadow: 0 0 4px 2px var(--decoration-color);
 
   position: absolute;
   top: 8px;
@@ -114,13 +114,13 @@
 .header__theme-menu-button {
   background-color: transparent;
   border: none;
-  color: var(--accent-color);
+  color: var(--decoration-color);
   text-transform: lowercase;
   min-inline-size: 70px;
 }
 
 .header__theme-menu-button_active {
-  outline: var(--accent-color) solid 1px;
+  outline: currentColor solid 1px;
 }
 
 .header__title {
@@ -137,8 +137,8 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-weight: 700;
   line-height: 0.825;
-  color: var(--banner-accent);
-  text-shadow: 4px 4px var(--accent-color);
+  color: var(--banner-main-color);
+  text-shadow: 4px 4px var(--banner-shadow-color);
 }
 
 @media (min-width: 768px) {
@@ -160,9 +160,9 @@
 }
 
 .title-decor {
-  color: var(--bg-color);
+  color: var(--subsection-title-color);
   font-weight: 700;
-  background-color: var(--accent-color);
+  background-color: var(--subsection-title-background);
 }
 
 .content {
@@ -202,7 +202,7 @@
 
 .content__section-title {
   font-size: 1.125rem;
-  color: var(--accent-color);
+  color: var(--section-title-color);
   margin-block-start: 20px;
 }
 
