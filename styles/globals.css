@@ -33,10 +33,19 @@ picture {
   padding: 0;
 }
 
-button,
+button {
+  color: currentColor;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
 a {
   color: currentColor;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+
+  text-shadow: 1px 1px var(--link-shadow-color);
+  text-decoration: none;
 }
