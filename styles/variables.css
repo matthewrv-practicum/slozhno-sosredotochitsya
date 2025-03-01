@@ -21,4 +21,10 @@
   --breakpoint-m: 768px;
   --breakpoint-l: 1024px;
   --s-m-diff: 393; /*768px - 375px*/
+
+  /* 
+    Линейный коэффициент для резиновой вёрстки.
+    Для breakpoint-s будет равен 0, для m - равен 1
+  */
+  --mult: calc((100vi - var(--breakpoint-s)) / var(--s-m-diff));
 }
