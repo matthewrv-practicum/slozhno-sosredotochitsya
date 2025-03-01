@@ -18,6 +18,8 @@
   --subsection-title-background: #ff8dcb;
   --subsection-title-color: #353430;
 
+  --link-shadow-color: #ff8dcb;
+
   --decoration-color: #353430;
 
   background-image: url(../images/cover-image-light.png);
@@ -37,6 +39,8 @@
     --section-title-color: #353430;
     --subsection-title-background: #ff8dcb;
     --subsection-title-color: #353430;
+
+    --link-shadow-color: #ff8dcb;
 
     --decoration-color: #353430;
   }

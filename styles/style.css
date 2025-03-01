@@ -120,7 +120,18 @@
 }
 
 .header__theme-menu-button_active {
+  pointer-events: none;
   outline: currentColor solid 1px;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: currentColor solid 1px;
+  outline: none;
+}
+
+.header__theme-menu-button:hover {
+  outline: currentColor solid 1px;
+  opacity: 0.4;
 }
 
 .header__title {
@@ -223,6 +234,20 @@
   font-size: 1.125rem;
   margin-block-start: 20px;
   font-weight: 400;
+}
+
+a {
+  text-shadow: 1px 1px var(--link-shadow-color);
+  text-decoration: none;
+}
+
+a:hover {
+  border-block-end: 1px solid currentColor;
+}
+
+a:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: -1px;
 }
 
 .content__section-distractions .content__section-title {
