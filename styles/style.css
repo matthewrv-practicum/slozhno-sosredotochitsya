@@ -257,7 +257,10 @@ a:focus-visible {
 @media (width >= 1024px) {
   .content__section-distractions .content__grid-item {
     grid-column: span 1;
-    grid-row: 2;
+  }
+
+  .content__section-distractions .content__grid-item:first-of-type {
+    grid-column: 1 / 2;
   }
 }
 
