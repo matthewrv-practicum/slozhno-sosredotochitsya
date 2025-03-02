@@ -22,6 +22,7 @@
   --link-shadow-color: #ff0070;
 
   --decoration-color: #ff0070;
+  --decoration-color-rgb: 255, 0, 112;
 
   background-image: url(../images/cover-image-dark.png);
 }

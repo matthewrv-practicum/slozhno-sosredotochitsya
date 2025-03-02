@@ -135,8 +135,7 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: currentColor solid 1px;
-  opacity: 0.4;
+  outline: rgba(var(--decoration-color-rgb), 0.4) solid 1px;
   cursor: pointer;
 }
 

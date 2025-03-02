@@ -17,6 +17,7 @@
   --link-shadow-color: #ff0070;
 
   --decoration-color: #ff0070;
+  --decoration-color-rgb: 255, 0, 112;
 
   --breakpoint-s: 375px;
   --breakpoint-m: 768px;

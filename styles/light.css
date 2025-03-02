@@ -22,6 +22,7 @@
   --link-shadow-color: #ff8dcb;
 
   --decoration-color: #353430;
+  --decoration-color-rgb: 53, 52, 48;
 
   background-image: url(../images/cover-image-light.png);
 }
@@ -45,6 +46,7 @@
     --link-shadow-color: #ff8dcb;
 
     --decoration-color: #353430;
+    --decoration-color-rgb: 53, 52, 48;
   }
 
   .page {
