@@ -13,13 +13,11 @@
   --bg-color: #fff1f7;
 
   --banner-main-color: #ffc2e6;
-  --banner-shadow-color: #ff0070;
+  --shadow-color: #ff8dcb;
 
   --section-title-color: #353430;
   --subsection-title-background: #ff8dcb;
   --subsection-title-color: #353430;
-
-  --link-shadow-color: #ff8dcb;
 
   --decoration-color: #353430;
   --decoration-color-rgb: 53, 52, 48;
@@ -37,13 +35,11 @@
     --bg-color: #fff1f7;
 
     --banner-main-color: #ffc2e6;
-    --banner-shadow-color: #ff0070;
+    --shadow-color: #ff8dcb;
 
     --section-title-color: #353430;
     --subsection-title-background: #ff8dcb;
     --subsection-title-color: #353430;
-
-    --link-shadow-color: #ff8dcb;
 
     --decoration-color: #353430;
     --decoration-color-rgb: 53, 52, 48;
