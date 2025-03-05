@@ -1,5 +1,334 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+/* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-color: var(--bg-color);
+  background-image: url(../images/cover-image-dark.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--text-color);
+  line-height: 1.3;
+
+  --margin: clamp(10px, 10px + 10 * var(--mult), 20px);
+}
+
+.header {
+  display: grid;
+  grid-template-areas:
+    "menu"
+    "title"
+    "subtitle";
+
+  grid-template-rows: 1fr min-content 1fr;
+  min-block-size: 500px;
+}
+
+.decorated-zone {
+  position: relative;
+  margin: var(--margin);
+  block-size: calc(100vb - 2 * var(--margin));
+}
+
+.decorated-zone::before {
+  content: "";
+
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+
+  display: block;
+  block-size: 25px;
+  inline-size: 25px;
+
+  border-block-end: var(--decoration-color) solid 1px;
+  border-inline-start: var(--decoration-color) solid 1px;
+}
+
+.decorated-zone::after {
+  content: "";
+
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+
+  display: block;
+  block-size: 25px;
+  inline-size: 25px;
+
+  border-inline-end: var(--decoration-color) solid 1px;
+  border-block-start: var(--decoration-color) solid 1px;
+}
+
+.header__recorder {
+  color: var(--decoration-color);
+  position: absolute;
+
+  inset-block-start: 1px;
+  inset-inline-end: 28px;
+}
+
+.header__recorder::after {
+  content: "";
+  display: inline-block;
+  block-size: 9px;
+  inline-size: 9px;
+  border-radius: 50%;
+  background-color: var(--decoration-color);
+  box-shadow: 0 0 4px 2px var(--decoration-color);
+
+  position: absolute;
+  inset-block-start: 7px;
+  inset-inline-end: -19px;
+}
+
+.header__theme-menu {
+  grid-area: menu;
+  align-self: center;
+  justify-self: end;
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: none;
+  color: var(--decoration-color);
+  text-transform: lowercase;
+  min-inline-size: 70px;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  outline: currentColor solid 1px;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: currentColor solid 1px;
+  outline: none;
+}
+
+.header__theme-menu-button:hover {
+  outline: rgba(var(--decoration-color-rgb), 0.4) solid 1px;
+  cursor: pointer;
+}
+
+.header__title {
+  grid-area: title;
+  position: relative;
+  inset-inline-start: clamp(-20px, -20 * var(--mult), 0px);
+}
+
+.heading {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 0.825;
+  color: var(--banner-main-color);
+  text-shadow: 4px 4px var(--shadow-color);
+}
+
+@media (width >= 768px) {
+  .heading {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+.header__subtitle {
+  grid-area: subtitle;
+  margin-block: auto;
+}
+
+@media (width >= 768px) {
+  .header__subtitle {
+    justify-self: end;
+    inline-size: 50%;
+  }
+}
+
+.title-decor {
+  color: var(--subsection-title-color);
+  font-weight: 700;
+  background-color: var(--subsection-title-background);
+}
+
+.content {
+  margin-inline: var(--margin);
+}
+
+.content__section {
+  margin-block-start: clamp(50px, 50px + 10 * var(--mult), 60px);
+}
+
+@media (width >= 768px) {
+  .content__section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+  }
+}
+
+@media (width >= 768px) {
+  .content__section-reasons {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+@media (width >= 1024px) {
+  .content__section-reasons {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .content__section-reasons .content__grid-item {
+    grid-column: 2 / -1;
+  }
+}
+
+.content__section-title {
+  font-size: 1.125rem;
+  color: var(--section-title-color);
+  margin-block-start: 20px;
+}
+
+.content__subsection-title {
+  font-size: 1.125rem;
+  margin-block-start: 20px;
+}
+
+.content__paragraph {
+  margin-block-start: 10px;
+}
+
+.content__subsubsection-title {
+  font-size: 1.125rem;
+  margin-block-start: 20px;
+  font-weight: 400;
+}
+
+a:focus {
+  outline: none;
+}
+
+a:hover {
+  border-block-end: 1px solid currentColor;
+  cursor: pointer;
+}
+
+a:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: -1px;
+}
+
+@media (width >= 768px) {
+  .content__section-distractions .content__section-title {
+    grid-column: 1 / 2;
+  }
+
+  .content__section-distractions .content__grid-item {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (width >= 1024px) {
+  .content__section-distractions .content__grid-item {
+    grid-column: span 1;
+  }
+
+  .content__section-distractions .content__grid-item:first-of-type {
+    grid-column: 1 / 2;
+  }
+}
+
+@media (width >= 768px) {
+  .content__section-howto {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+@media (width >= 1024px) {
+  .content__section-howto {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .content__section-howto .content__section-grid-item {
+    grid-column: 2 / -1;
+  }
+}
+
+.content__section-images {
+  font-size: 0;
+  gap: var(--margin);
+}
+
+@media (width >= 768px) {
+  .content__section-images .content__subsection-title {
+    grid-column: 1 / -1;
+  }
+}
+
+.content__image {
+  inline-size: 100%;
+  block-size: 100%;
+  object-position: center;
+  object-fit: cover;
+  margin-block-start: var(--margin);
+}
+
+@media (width >= 768px) {
+  .content__image {
+    /* margin is replaced with gap of container */
+    margin-block-start: 0;
+  }
+}
+
+.content__image-sunset {
+  grid-column: span 2;
+}
+
+.content__image-icecream {
+  grid-row: span 2;
+}
+
+.content__image-tape {
+  grid-row: span 2;
+}
+
+.content__image-street {
+  grid-column: span 2;
+}
+
+.footer {
+  display: flex;
+  margin-block-start: clamp(50px, 50px + 30 * var(--mult), 80px);
+  min-height: min-content;
+}
+
+.footer__title {
+  display: block;
+  margin: auto;
 }
